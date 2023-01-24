@@ -4,7 +4,7 @@ import datetime
 from tkinter import W
 import pyautogui
 import time
-import re
+
 
 
 main_window = tkinter.Tk()
