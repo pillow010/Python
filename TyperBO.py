@@ -30,7 +30,7 @@ def TypeBO():       # SET PT -> EXCEL -> BO
         pyautogui.hotkey('ctrl', 'a')
         pyautogui.hotkey('ctrl', 'c')
         pyautogui.hotkey('alt', 'tab')  # BO
-        # pyautogui.hotkey('alt', 't')
+        pyautogui.hotkey('alt', 't')
         pyautogui.hotkey('ctrl', 'v')
         pyautogui.hotkey('shiftleft', 'shiftright', 'tab')
         pyautogui.write(str(f"{int(numberingEntry.get()) + i:03d}"))

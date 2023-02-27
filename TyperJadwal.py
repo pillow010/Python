@@ -6,7 +6,6 @@ import pyautogui
 import time
 
 
-
 main_window = tkinter.Tk()
 main_window.geometry("1000x200")
 
@@ -211,6 +210,7 @@ def type_after_date():
 def before_date1():
     pyautogui.press('f5')
     # pyautogui.write(re.sub(r"[\n\t]", "", str(doctor_field.get())))
+    pyautogui.write(dropDokter.get())
     pyautogui.write()
     pyautogui.press('tab')
     return []
@@ -400,8 +400,21 @@ def run_command():
     pyautogui.press('f9')
 
 
+def next_level():
+    for day in range(1, int(last_day_of_selected_month())+1):
+        if str(f"{day:02d}") in str(holiday_field.get()).split(',') or str(day) in str(holiday_field.get()).split(','):
+            continue
+        pyautogui.run(before_date())
+        pyautogui.write(str(f"{day:02d}"))
+    pyautogui.press('f9')
+
+
+# tombol = tkinter.Button(main_window, text="Next Level", command=run_command)
+# tombol.grid(row=6, column=4)
+# tombol.bind('<Return>', run_command)
+
 tombol = tkinter.Button(main_window, text="GO TYPE", command=run_command)
-tombol.grid(row=6, column=4)
+tombol.grid(row=6, column=0)
 tombol.bind('<Return>', run_command)
 
 
