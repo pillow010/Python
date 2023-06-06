@@ -5,7 +5,25 @@ import pyautogui
 import re
 
 main_window = tkinter.Tk()
-main_window.geometry("400x600")
+main_window.geometry("350x600")
+
+input_frame_row3 = tkinter.Frame(main_window)
+input_frame_row3.pack(anchor='w')
+
+sleep_label = tkinter.Label(input_frame_row3, text="sleep")
+sleep_label.pack(side='left')
+
+sleep_field = tkinter.Entry(input_frame_row3)
+sleep_field.insert(0, "0.4")  # Set default value as 0.4
+sleep_field.pack(side='left')
+
+def update_sleep_duration():
+    pyautogui.PAUSE = float(sleep_field.get())
+
+update_sleep_duration()
+
+apply_button = tkinter.Button(input_frame_row3, text="Apply", command=update_sleep_duration)
+apply_button.pack(side='left')
 
 # pyautogui.PAUSE = 0.1
 
@@ -13,14 +31,19 @@ main_window.geometry("400x600")
 input_frame_row1 = tkinter.Frame(main_window)
 input_frame_row1.pack(anchor='w')
 
-tanggal_awal_label = tkinter.Label(input_frame_row1, text="tanggal awal")
+tanggal_awal_label = tkinter.Label(input_frame_row1, text="tanggal awal ")
 tanggal_awal_label.pack(side='left', anchor='w')
 tanggal_awal_field = tkinter.Entry(input_frame_row1)
+tanggal_awal_field.insert(0, "01/06/2023")  # Set default value
 tanggal_awal_field.pack(side='left', anchor='w')
 
-tanggal_akhir_label = tkinter.Label(input_frame_row1, text="tanggal akhir")
+input_frame_row1b = tkinter.Frame(main_window)
+input_frame_row1b.pack(anchor='w')
+
+tanggal_akhir_label = tkinter.Label(input_frame_row1b, text="tanggal akhir")
 tanggal_akhir_label.pack(side='left')
-tanggal_akhir_field = tkinter.Entry(input_frame_row1)
+tanggal_akhir_field = tkinter.Entry(input_frame_row1b)
+tanggal_akhir_field.insert(0, "31/12/2030")  # Set default value
 tanggal_akhir_field.pack(side='left')
 
 # Create input fields
