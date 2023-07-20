@@ -1,4 +1,4 @@
-import tkinter
+import tkinter as tk
 from tkinter import ttk
 import datetime
 from tkinter import W
@@ -6,69 +6,69 @@ import pyautogui
 import time
 
 
-main_window = tkinter.Tk()
+main_window = tk.Tk()
 main_window.geometry("1000x200")
 
 # Dropdown menu options
 listDokter = [
     "Pilih Dokter",
-    "Alma Thahir Pulungan",
-    "Amalia K. Mansur",
-    "Andrian Wulur",
-    "Beriman Parhusip",
-    "Canang Irving Amrizal",
+    "Alma Thahir Pulunga",
+    # "Amalia K. Mansur",
+    # "Andrian Wulur",
+    # "Beriman Parhusip",
+    "Canang Irving A",
     "Chandra Irawan",
     "Chrisming Wiraja",
     "Dadang Herdiana",
     "Darma Putra Sitepu",
-    "Deny Handayanto",
-    "Desak",
+    # "Deny Handayanto",
+    "Desak Gede Arie Y",
     "Desy Nur Arista",
     "Diah Kusuma Wardani",
     "Dini Zuriana",
     "Eka Pranata",
     "Elisabeth Handayani",
-    "Endi Permana Utomo",
-    "Firman Sah Anthonius",
-    "Heldrian Dwi Nanda",
-    'Hendriko Sitorus',
-    "Ieke Harsya Barliana",
+    # "Endi Permana Utomo",
+    "Firman Sah A",
+    "Heldrian DS",
+    'Hendriko',
+    "Ieke H. Barliana",
     "Ika Fransisca",
-    "Irfan Mulyana Mustofa",
+    "Irfan Mulyana M",
     "Kandita Arjani",
-    "Made Wira bhawa",
-    "Margi Yati Soewito",
+    "M. Mulyadi",
+    "Made Wirabhawa",
+    "Margi Yati S",
     "Miko Galastri",
-    "Muhamad Mulyadi",
     "Muhammad Relly",
     "Muslimah Luhuna",
-    "Ni Nyoman Tri Priliawati",
+    "Ni Nyoman Tri P",
     "Ni'ma Nuraini Kusuma Sari",
-    "Norman Rabker Jefret Tuhulele",
+    # "Norman Rabker Jefret Tuhulele",
     "Nurul Subhan",
     "Pipik Ripai",
-    "R. Leni Maelani Patimah",
-    "RANGGA KUSUMA MAULANA",
+    "R. Leni Maelani P",
+    "RANGGA KUSUMA M",
     "Renie Astriani F",
     "Rina Rahmayani",
-    "Rini Suryani",
+    "Rini Suryanti",
     "Satria Evo B",
-    "Setya Budi Hutapea",
+    "Setia Budi Hutapea",
     "Tegoeh Winandar",
-    "Tengku Budiansyah",
+    "Tengku Mohammad B",
     "Titty Sulianty",
-    "Wahyu Sigit Purnomo",
+    # "Wahyu Sigit Purnomo",
     "Widja Widajaka",
     "Widya Sakti Pratama",
     "Yati Nurhayati",
-    "Yulia Santi Eko Wulansari",
-    "Yuliantry Indah Lestari",
+    "Yulia S E W",
+    "Yuliantry Indah L",
     "Zam Zam Firmansyah"
 
 ]
 
 # datatype of menu text
-clickedDokter = tkinter.StringVar(main_window)
+clickedDokter = tk.StringVar(main_window)
 
 # initial menu text
 clickedDokter.set(listDokter[0])
@@ -77,44 +77,36 @@ clickedDokter.set(listDokter[0])
 dropDokter = ttk.Combobox(main_window, textvariable=clickedDokter, values=listDokter)
 
 # LABEL
-tkinter.Label(main_window, text="Sec B4 Start:")\
+tk.Label(main_window, text="Sec B4 Start:")\
     .grid(row=0, column=0, sticky=W, pady=2)  # sleep_label
-tkinter.Label(main_window, text="Year:")\
+tk.Label(main_window, text="Year:")\
     .grid(row=1, column=0, sticky=W, pady=2)  # year_label
-tkinter.Label(main_window, text="Month")\
+tk.Label(main_window, text="Month")\
     .grid(row=2, column=0, sticky=W, pady=2)  # month_label
-# tkinter.Label(main_window, text="Doctor")\
-#     .grid(row=3, column=0, sticky=W, pady=2)  # doctor_label
 dropDokter.grid(row=3, column=0, sticky=W, pady=2)
-tkinter.Label(main_window, text="Holiday")\
+tk.Label(main_window, text="Holiday")\
     .grid(row=4, column=0, sticky=W, pady=2)  # holiday_label
-# tkinter.Label(main_window, text="Days")\
-#     .grid(row=2, column=2, sticky=W, pady=2)  # days_label
-tkinter.Label(main_window, text="|Quota Reservasi|")\
+tk.Label(main_window, text="|Quota Reservasi|")\
     .grid(row=0, column=3, sticky=W, pady=2)  # rsv_doctor_quota_label
-tkinter.Label(main_window, text="|Quota Langsung|")\
+tk.Label(main_window, text="|Quota Langsung|")\
     .grid(row=0, column=4, sticky=W, pady=2)  # spot_doctor_quota_label
 
 
-# label3 = tkinter.Label(main_window, text="Senin").grid(row=2)
-
 # FIELD TEXT_BOX
-hold_field = tkinter     .Entry(main_window)
-year_field = tkinter     .Entry(main_window)
-month_field = tkinter    .Entry(main_window)
-# doctor_field = tkinter   .Entry(main_window)
-holiday_field = tkinter  .Entry(main_window)  # Holiday
-rsv_doctor_quota = tkinter.Entry(main_window, width=4)
-spot_doctor_quota = tkinter.Entry(main_window, width=4)
-rsv_doctor_quota1 = tkinter.Entry(main_window, width=4)
-spot_doctor_quota1 = tkinter.Entry(main_window, width=4)
+hold_field = tk     .Entry(main_window)
+year_field = tk     .Entry(main_window)
+month_field = tk    .Entry(main_window)
+holiday_field = tk  .Entry(main_window)  # Holiday
+rsv_doctor_quota = tk.Entry(main_window, width=4)
+spot_doctor_quota = tk.Entry(main_window, width=4)
+rsv_doctor_quota1 = tk.Entry(main_window, width=4)
+spot_doctor_quota1 = tk.Entry(main_window, width=4)
 
 
 # TEXT_BOX POSITIONING
 hold_field     .grid(row=0, column=1)
 year_field     .grid(row=1, column=1)
 month_field    .grid(row=2, column=1)
-# doctor_field   .grid(row=3, column=1)
 holiday_field  .grid(row=4, column=1)   # Holiday
 rsv_doctor_quota.grid(row=1, column=3)
 spot_doctor_quota.grid(row=1, column=4)
@@ -122,53 +114,51 @@ rsv_doctor_quota1.grid(row=3, column=3)
 spot_doctor_quota1.grid(row=3, column=4)
 
 # FALUE CHECKBOX 1 CHECKED 0 UNCHECK
-monday_value = tkinter   .IntVar()
-tuesday_value = tkinter  .IntVar()
-wednesday_value = tkinter.IntVar()
-thursday_value = tkinter .IntVar()
-friday_value = tkinter   .IntVar()
-saturday_value = tkinter .IntVar()
-monday_value1 = tkinter   .IntVar()
-tuesday_value1 = tkinter  .IntVar()
-wednesday_value1 = tkinter.IntVar()
-thursday_value1 = tkinter .IntVar()
-friday_value1 = tkinter   .IntVar()
-saturday_value1 = tkinter .IntVar()
+monday_value = tk   .IntVar()
+tuesday_value = tk  .IntVar()
+wednesday_value = tk.IntVar()
+thursday_value = tk .IntVar()
+friday_value = tk   .IntVar()
+saturday_value = tk .IntVar()
+monday_value1 = tk   .IntVar()
+tuesday_value1 = tk  .IntVar()
+wednesday_value1 = tk.IntVar()
+thursday_value1 = tk .IntVar()
+friday_value1 = tk   .IntVar()
+saturday_value1 = tk .IntVar()
 
-monday_checkbox = tkinter\
-    .Checkbutton(main_window, text="Monday",
-                 variable=monday_value)
-tuesday_checkbox = tkinter\
+monday_checkbox = tk.Checkbutton(main_window, text="Monday", variable=monday_value)
+tuesday_checkbox = tk\
     .Checkbutton(main_window, text="Tuesday",
                  variable=tuesday_value)
-wednesday_checkbox = tkinter\
+wednesday_checkbox = tk\
     .Checkbutton(main_window, text="Wednesday",
                  variable=wednesday_value)
-thursday_checkbox = tkinter\
+thursday_checkbox = tk\
     .Checkbutton(main_window, text="Thursday",
                  variable=thursday_value)
-friday_checkbox = tkinter\
+friday_checkbox = tk\
     .Checkbutton(main_window, text="Friday",
                  variable=friday_value)
-saturday_checkbox = tkinter\
+saturday_checkbox = tk\
     .Checkbutton(main_window, text="Saturday",
                  variable=saturday_value)
-monday_checkbox1 = tkinter\
+monday_checkbox1 = tk\
     .Checkbutton(main_window, text="Monday",
                  variable=monday_value1)
-tuesday_checkbox1 = tkinter\
+tuesday_checkbox1 = tk\
     .Checkbutton(main_window, text="Tuesday",
                  variable=tuesday_value1)
-wednesday_checkbox1 = tkinter\
+wednesday_checkbox1 = tk\
     .Checkbutton(main_window, text="Wednesday",
                  variable=wednesday_value1)
-thursday_checkbox1 = tkinter\
+thursday_checkbox1 = tk\
     .Checkbutton(main_window, text="Thursday",
                  variable=thursday_value1)
-friday_checkbox1 = tkinter\
+friday_checkbox1 = tk\
     .Checkbutton(main_window, text="Friday",
                  variable=friday_value1)
-saturday_checkbox1 = tkinter\
+saturday_checkbox1 = tk\
     .Checkbutton(main_window, text="Saturday",
                  variable=saturday_value1)
 
@@ -189,7 +179,6 @@ saturday_checkbox1   .grid(row=3, column=10, sticky=W, pady=2)
 
 def before_date():
     pyautogui.press('f5')
-    # pyautogui.write(re.sub(r"[\n\t]", "", str(doctor_field.get())))
     pyautogui.write(dropDokter.get())
     pyautogui.press('tab')
     return []
@@ -209,9 +198,7 @@ def type_after_date():
 
 def before_date1():
     pyautogui.press('f5')
-    # pyautogui.write(re.sub(r"[\n\t]", "", str(doctor_field.get())))
     pyautogui.write(dropDokter.get())
-    pyautogui.write()
     pyautogui.press('tab')
     return []
 
@@ -407,13 +394,9 @@ def next_level():
         pyautogui.run(before_date())
         pyautogui.write(str(f"{day:02d}"))
     pyautogui.press('f9')
+    
 
-
-# tombol = tkinter.Button(main_window, text="Next Level", command=run_command)
-# tombol.grid(row=6, column=4)
-# tombol.bind('<Return>', run_command)
-
-tombol = tkinter.Button(main_window, text="GO TYPE", command=run_command)
+tombol = tk.Button(main_window, text="GO TYPE", command=run_command)
 tombol.grid(row=6, column=0)
 tombol.bind('<Return>', run_command)
 
