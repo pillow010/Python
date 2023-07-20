@@ -1,5 +1,4 @@
 import tkinter
-from tkinter import W
 
 import pyautogui
 import re
@@ -17,8 +16,10 @@ sleep_field = tkinter.Entry(input_frame_row3)
 sleep_field.insert(0, "0.4")  # Set default value as 0.4
 sleep_field.pack(side='left')
 
+
 def update_sleep_duration():
     pyautogui.PAUSE = float(sleep_field.get())
+
 
 update_sleep_duration()
 
@@ -88,28 +89,8 @@ for checkbox_text in checkbox_values.keys():
 
 # Create checkboxes
 for checkbox_text, checkbox_var in checkbox_vars.items():
-    checkbox = tkinter.Checkbutton(main_window, text=checkbox_text, variable=checkbox_var, onvalue=1, offvalue=0)
-    checkbox.pack(anchor='w')
-
-# def add():
-#     for i in range (15):
-#         pyautogui.press("f5")
-#         # kelas
-#         for x in range(i):
-#             pyautogui.press("down")
-#         pyautogui.press("tab")
-#         # tanggal awal
-#         pyautogui.write("0162023")
-#         pyautogui.press("tab")
-#         # tanggal akhir
-#         pyautogui.hotkey("ctrl","shiftleft","right")
-#         pyautogui.write	("31122030")
-#         pyautogui.press("tab")
-#         # js
-#         pyautogui.write(js_field.get())
-#         pyautogui.press("tab")
-#         pyautogui.press("tab")
-#         pyautogui.write(jp_field.get())
+    checkbox1 = tkinter.Checkbutton(main_window, text=checkbox_text, variable=checkbox_var, onvalue=1, offvalue=0)
+    checkbox1.pack(anchor='w')
 
 
 def filter_special_characters(text):
@@ -120,9 +101,9 @@ def filter_special_characters(text):
 
 # Function to handle the button click event
 def add():
-    pyautogui.hotkey("alt","tab")
-    selected_checkboxes = [checkbox_values[checkbox] for checkbox in checkbox_values.keys() if checkbox_vars[checkbox].get() == 1]
-
+    pyautogui.hotkey("alt", "tab")
+    selected_checkboxes = [checkbox_values[checkbox] for checkbox in checkbox_values.keys()
+                           if checkbox_vars[checkbox].get() == 1]
 
     for checkbox_value in selected_checkboxes:
         print(checkbox_value)
@@ -157,6 +138,7 @@ tombol = tkinter.Button(main_window, text="START(Enter)", command=add)
 tombol.pack()
 main_window.bind('<Return>', lambda event: add())
 
+
 # Function to open a new window with the text
 def open_manual_window():
     manual_text = '''
@@ -176,8 +158,6 @@ def open_manual_window():
     manual_text_widget.insert(tkinter.END, manual_text)
     manual_text_widget.pack()
 
-# # Create the main tkinter window
-# window = tkinter.Tk()
 
 # Create the "Manual" button
 manual_button = tkinter.Button(main_window, text="Manual(F1)", command=open_manual_window)
@@ -187,4 +167,3 @@ main_window.bind('<F1>', lambda event: open_manual_window())
 
 if __name__ == '__main__':
     main_window.mainloop()
-
